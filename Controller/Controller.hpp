@@ -8,7 +8,14 @@
 
 #ifndef Controller_hpp
 #define Controller_hpp
+#include "FileController.hpp"
+#include <iostream>
 
-#include <stdio.h>
-
+class Controller
+{
+private:
+    void findMaxAndMin();
+public:
+    void start();
+};
 #endif /* Controller_hpp */
