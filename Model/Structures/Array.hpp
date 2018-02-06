@@ -32,8 +32,13 @@ public:
     Array<Type> & operator = (const Array<Type> & toReplace);
     Type& operator [] (int index);
     void setAtIndex(int index, Type data);
+    
+    //Methods
+    int getSize() const;
+    Type getFromIndex(int index);
+    void setAtIndex(int index, Type data);
 };
-
+{
     template <class Type>
     Array<Type> :: Array(int size)
     {
@@ -43,7 +48,7 @@ public:
         internalArray = new Type[size];
     }
 };
-
+{
     template <class Type>
     Array<Type> :: Array(const Array<Type> & toCopy)
     {
@@ -60,11 +65,18 @@ public:
 };
 
     template <class Type>
-    Array<Type> :: ~Array()
+Array<Type> & Array<Type> :: operator = (const Array<Type> & toAssign
+{
+     if (&toAssign != this)
+     {
+         if (size != toAssign.getSize())
+         {
+             
+    }
     {
         delete [] internalArray;
     }
-};
+
 
     template <class Type>
     Array<Type> & Array<Type> :: operator = (const Array<Type> & toAssign)
@@ -114,4 +126,12 @@ public:
         assert(pos >= 0 && pos < size);
         internalArray[pos] = item;
     }
+         
+template <class Type>
+         Array<Type> :: ~Array()
+         {
+             cout << "About to delete the structure" << endl;
+             delete [] internalArray;
+             cout << "Inrnal array deleted" << endl;
+         }
 #endif /* Array_hpp */
