@@ -25,7 +25,7 @@ private:
     int vertexCount;
     void depthFirstTraversal(Graph<Type> & graph, int vertex, bool markedVertices[]);
 public:
-    Graph()
+    Graph();
     //Graph operations
     
     void addVertex(const Type& value);
@@ -51,7 +51,7 @@ public:
     //Traversals
     void depthFirstTraversal(Graph<Type> & graph, int vertex);
     void breadthFirstTraversal(Graph<Type> & graph, int vertex);
-    int costTraversal(Graph<Type> & graph, int vertex;)
+    int costTraversal(Graph<Type> & graph, int vertex);
 };
 
 template <class Type>
