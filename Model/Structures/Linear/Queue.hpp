@@ -81,6 +81,48 @@ void Queue<Type> :: add(Type item)
 }
 
 template <class Type>
-Type Qu
+Type Queue<Type> :: dequeue()
+{
+    assert(this->size > 0);
+    
+    Type returned = this->front->getData();
+    
+    LinearNode<Type> * removed = this->front;
+    delete removed;
+    
+    this->size = this->size - 1;
+    
+    return returned;
+}
+
+template <class Type>
+Type Queue<Type> :: remove(int index)
+{
+    assert(index == 0);
+    return dequeue();
+}
+
+template <class Type>
+void Queue<Type> :: clear()
+{
+    while(tthis->front != nullptr)
+    {
+        cout << dequeue() << endl;
+    }
+}
+
+template <class Type>
+Type Queue<Type> :: peek()
+{
+    assert(this->size > 0);
+    return this->getFront()->getData();
+}
+
+template <class Type>
+Type Queue<Type> :: getFromIndex(int index)
+{
+    assert(index == 0);
+    return peek();
+}
 
 #endif /* Queue_h */
